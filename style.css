@@ -1,0 +1,24 @@
+.guest-card {
+    transition: all 0.3s ease;
+}
+.guest-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.friend-tag {
+    background-color: #93c5fd;
+}
+.family-tag {
+    background-color: #86efac;
+}
+.colleague-tag {
+    background-color: #f9a8d4;
+}
+.attending {
+    background-color: #f0fdf4;
+    border-left: 4px solid #10b981;
+}
+.not-attending {
+    background-color: #fef2f2;
+    border-left: 4px solid #ef4444;
+}

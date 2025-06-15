@@ -1,0 +1,47 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Guest List Manager</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <header class="mb-8 text-center">
+            <h1 class="text-3xl font-bold text-indigo-700 mb-2">Event Guest List Manager</h1>
+            <p class="text-gray-600">Keep track of your event attendees</p>
+        </header>
+
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <form id="guestForm" class="space-y-4">
+                <div>
+                    <label for="guestName" class="block text-sm font-medium text-gray-700 mb-1">Guest Name</label>
+                    <input type="text" id="guestName" required 
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Category</label>
+                    <div class="flex space-x-4">
+                        <label class="inline-flex items-center">
+                            <input type="radio" name="category" value="Friend" checked 
+                                class="h-4 w-4 text-indigo-600 focus:ring-indigo-500">
+                            <span class="ml-2 text-gray-700">Friend</span>
+                        </label>
+                        <label class="inline-flex items-center">
+                            <input type="radio" name="category" value="Family" 
+                                class="h-4 w-4 text-indigo-600 focus:ring-indigo-500">
+                            <span class="ml-2 text-gray-700">Family</span>
+                        </label>
+                        <label class="inline-flex items-center">
+                            <input type="radio" name="category" value="Colleague" 
+                                class="h-4 w-4 text-indigo-600 focus:ring-indigo-500">
+                            <span class="ml-2 text-gray-700">Colleague</span>
+                        </label>
+                    </div>
+                </div>
+
+</body>
+</html>

@@ -17,8 +17,6 @@ Your application should provide the following features:
 - Users can click a submit button to add the guest to the list.
 - The guest's name appears in a list on the page after submission.
 - Each guest entry includes a "Remove" button that deletes the guest from the list.
-- The list should be limited to 10 guests. If the user attempts to add more, display an alert.
-- Include a "Toggle RSVP" feature so that each guest can be marked as either "Attending" or "Not Attending".
 
 You are free to create your own layout and styling. The goal is to meet the functional requirements in a clear and user-friendly way.
 

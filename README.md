@@ -4,15 +4,6 @@
 
 This project is a simple Event Guest List Manager built using JavaScript to manipulate the DOM. It allows users to dynamically add, update, and remove guest names from a list without refreshing the browser.
 
-## Overview
-
-In this code challenge, you'll practice the following JavaScript and front-end development skills:
-
-- Handling forms and user input
-- Dynamically updating the page using JavaScript
-- DOM manipulation and event handling
-- Basic conditional logic and state control
-
 ## Code Structure
 
 Your code should be organized in the following structure:
@@ -30,15 +21,6 @@ Your application should provide the following features:
 - Include a "Toggle RSVP" feature so that each guest can be marked as either "Attending" or "Not Attending".
 
 You are free to create your own layout and styling. The goal is to meet the functional requirements in a clear and user-friendly way.
-
-## Stretch Deliverables
-
-After completing the required features, you may choose to implement additional functionality, such as:
-
-- Categorize guests as Friend, Family, or Colleague using color-coded tags.
-- Display the time when each guest was added to the list.
-- Add an Edit button that allows users to change a guest's name.
-- Implement any other custom feature that enhances the app's functionality or design.
 
 ## Testing and Debugging
 

@@ -1,24 +1,96 @@
-.guest-card {
-    transition: all 0.3s ease;
+/* import graduation cup icon from font awesome */
+
+/* styling the whole body */
+body{
+    background-color: whitesmoke;
+    width: 100vw;
+    height: 100vh;
 }
-.guest-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+/* styling the container in the body with our content */
+
+.container{
+    display: inline-block;
+    background-color: rgb(218, 218, 202);
+    width: 50%;
+    margin-left: 20px;
+    border-radius: 10px;
+    padding: 20px;
+
 }
-.friend-tag {
-    background-color: #93c5fd;
+
+/* styling the hfirst heading */
+.heading-1{
+    text-decoration: underline;
+    text-transform: uppercase;
 }
-.family-tag {
-    background-color: #86efac;
+/* styling the label for the input ---Guest Name */
+#guestForm label{
+    font-size: x-large;
+
 }
-.colleague-tag {
-    background-color: #f9a8d4;
+
+/* styling the add button */
+#add-guest{
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    border-style: none;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
 }
-.attending {
-    background-color: #f0fdf4;
-    border-left: 4px solid #10b981;
+ /* adding hovering color effect to add guest button */
+#add-guest:hover{
+    background-color: black;
 }
-.not-attending {
-    background-color: #fef2f2;
-    border-left: 4px solid #ef4444;
+
+.container-list{
+    background-color: chartreuse;
+    display: inline-block;
+    width: 50px;
+    
+}
+ .heading-2{
+    text-decoration: underline;
+}
+/* adding some style to the list and the appearence when a guest is added */
+#guestList{
+    padding-top: 10px;
+    background-color: aquamarine;
+    border-left: 10px dashed green;
+    width: fit-content;
+   
+    
+}
+/* styling the appearance of the list li element or the guest name inputed on the list */
+#guestList li {
+    padding: 5px 0;
+    border-bottom: 1px solid black;
+}
+
+/* styling the rsvp select box */
+.rsvp-select{
+    margin: 0 20px;
+    cursor: pointer;  
+}
+.rsvp-select option{
+    background-color: black;
+    color: white;
+    
+}
+/* styling the remove button */
+.remove-button{
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    border-style: none;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+/* adding hovering effect on the remove button */
+.remove-button:hover{
+    background-color: black;
 }

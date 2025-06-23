@@ -1,76 +1,69 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const guestForm = document.getElementById('guest-form');
-    const guestNameInput = document.getElementById('guest-name');
-    const guestList = document.getElementById('guest-list');
-    let guests = [];
+let name = document.getElementById('username');  //Get the input field where the user enters their name
 
-    guestForm.addEventListener('submit', (event) => {
-        event.preventDefault(); 
+let list = document.getElementById('guestList');  // Get the list element that will display the guests
 
-        const guestName = guestNameInput.value.trim();
-        if (guestName === '') return;
+let buttonReaction = document.getElementById('add-guest');  //Get the button that will trigger adding a guest
 
-        if (guests.length >= 10) {
-            alert('You can add up to 10 guests only.');
-            return;
-        }
 
-        const guest = {
-            name: guestName,
-            attending: false,
-            timeAdded: new Date().toLocaleString()
-        };
+// Add event listener to handle button click
+buttonReaction.addEventListener ('click', (e) => {
+  e.preventDefault();  //prevent page reloading
 
-        guests.push(guest);
-        updateGuestList();
-        guestNameInput.value = ''; 
-        guestNameInput.focus();
-    });
+  if(name.value.trim() ==='' || !isNaN(name.value.trim())){  //input shoud not be empty or a number --add alert for that
+    alert('Input a name')
+    return;
+  }
 
-    function updateGuestList() {
-        guestList.innerHTML = '';
+   if (list.children.length>=10){
+    alert('The limit is 10 guests')  //limiting the guest number to 10
+    name.value = '';
+    return ;
+   }
+  //Create a new list item and set its content to the entered name
+ let li = document.createElement('li');
+ li.textContent = name.value;
+ // create remove button
+ let removeBtn = document.createElement('button')
+ removeBtn.className = 'remove-button';
+ removeBtn.textContent = 'Remove';
+ 
 
-        guests.forEach((guest, index) => {
-            const li = document.createElement('li');
-            li.classList.toggle('attending', guest.attending);
+  // creating RSVP dropdown menu
+let rsvpSelect = document.createElement('select');
+rsvpSelect.className= 'rsvp-select'
+let optionList = [
+  '--RSVP--',
+  'Attending',  //rsvp options
+  'Not Attending'];
+ // adding rsvp options to the dropdown
+  optionList.forEach (optionText =>{
+  let option = document.createElement('option');
+  option.value = optionText;
+  option.textContent = optionText;
 
-            const guestInfo = document.createElement('div');
-            guestInfo.className = 'guest-info';
+  rsvpSelect.appendChild(option);
+  })
+  
 
-            const nameSpan = document.createElement('span');
-            nameSpan.textContent = guest.name;
+  // adding rsvp dropdown and remove button to the list item
+  li.appendChild(rsvpSelect);
+  li.appendChild(removeBtn);
+ 
+  // adding the list item to the guest list
+ list.appendChild(li)
 
-            const timeSpan = document.createElement('span');
-            timeSpan.className = 'timestamp';
-            timeSpan.textContent = `Added: ${guest.timeAdded}`;
+ name.value = '';  //clear or empty the input feild
 
-            guestInfo.appendChild(nameSpan);
-            guestInfo.appendChild(timeSpan);
 
-            li.appendChild(guestInfo);
+})
 
-            // Toggle rsvp button
-            const toggleBtn = document.createElement('button');
-            toggleBtn.className = 'toggle-rsvp';
-            toggleBtn.textContent = guest.attending ? 'Mark as Not Attending' : 'Mark as Attending';
-            toggleBtn.addEventListener('click', () => {
-                guest.attending = !guest.attending;
-                updateGuestList();
-            });
 
-            // Remove guest button
-            const removeBtn = document.createElement('button');
-            removeBtn.className = 'remove-guest';
-            removeBtn.textContent = 'Remove';
-            removeBtn.addEventListener('click', () => {
-                guests.splice(index, 1);
-                updateGuestList();
-            });
+ // add event listener to remove button if clicked  remove its parent list item
+list.addEventListener('click', (e) => {
+  if (e.target.classList.contains('remove-button')) {
+    const li = e.target.closest('li');
+    li.remove();
+  }
 
-            li.appendChild(toggleBtn);
-            li.appendChild(removeBtn);
 
-            guestList.appendChild(li);
-        });
-    }
-});
+})  
